@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "841332488173",
+    "project_id": "money-exchange-app-77cad",
+    "storage_bucket": "money-exchange-app-77cad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841332488173:android:a7abe4afd6f8c9e14b19e4",
+        "android_client_info": {
+          "package_name": "com.marko112.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841332488173-k2f4hbb4uapeeusfeeufcs0il9hfmab4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCripfM-Kasd5nZTlxTHEcX6duFMojGE9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841332488173-k2f4hbb4uapeeusfeeufcs0il9hfmab4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
