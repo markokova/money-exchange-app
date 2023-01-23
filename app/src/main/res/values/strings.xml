@@ -10,7 +10,7 @@
     <string name="swap_button">SWAP</string>
     <string name="convert_button">CONVERT</string>
     <string name="hint_recipient_email">Recipient Email</string>
-    <string name="hint_amount">Amount</string>
+    <string name="hint_amount">Amount [EUR]</string>
     <string name="hint_description">Description</string>
     <string name="pay_button">PAY</string>
     <string name="login_button">LOGIN</string>

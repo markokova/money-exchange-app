@@ -73,12 +73,13 @@ class PaymentFragment : Fragment() {
             for(user in users){
                 if(user.email == recipientEmail.text.toString()){
                     recipient = user
-                    if(recipient == null){
-                        Log.d(TAG,"Recipient not found.")
-                    }
+                    break
                 }
             }
-            if ((payer != null) && (recipient != null)) {
+            if(recipient == null){
+                Toast.makeText(this@PaymentFragment.context, "There is no such account. Check the recipient email you entered.", Toast.LENGTH_LONG).show()
+            }
+            else if (payer != null) {
                 if(payer!!.isAbleToPay(transactionAmount.text.toString().toDouble()) == 2){
                     val transaction = Transaction(
                         date = Timestamp.now(),
@@ -121,18 +122,13 @@ class PaymentFragment : Fragment() {
                     Toast.LENGTH_LONG
                 ).show()
             }
-            else if(recipient == null){
-                Toast.makeText(
-                    this@PaymentFragment.context, "There is no such account. Check the recipient email you entered.",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
         }
 
         paymentViewModel.text.observe(viewLifecycleOwner) {
             balance.text = payer?.balance.toString()
             name.text = payer?.name
-            email.text = payer?.email
+            email.text = auth.currentUser?.email
+
         }
         return root
     }

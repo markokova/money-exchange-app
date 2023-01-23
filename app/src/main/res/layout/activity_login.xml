@@ -43,7 +43,7 @@
         android:id="@+id/activity_login_registerMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
+        android:layout_marginStart="65dp"
         android:layout_marginTop="10dp"
         android:text="Don't have an account yet?"
         app:layout_constraintStart_toStartOf="parent"
