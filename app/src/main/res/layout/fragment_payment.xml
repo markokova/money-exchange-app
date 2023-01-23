@@ -126,5 +126,17 @@
         app:layout_constraintStart_toEndOf="@+id/fragment_payment_moneyAmmount"
         app:layout_constraintTop_toBottomOf="@+id/fragment_payment_Email" />
 
+    <TextView
+        android:id="@+id/fragment_payment_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="28dp"
+        android:text="EUR"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/fragment_payment_ammountToPay"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_payment_userNameToPay" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

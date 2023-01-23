@@ -58,25 +58,28 @@ class PaymentFragment : Fragment() {
 
         var recipient: User? = null
         var payer: User? = null
-        //find recipient and payer in all users
+        //find payer among all users
         for(user in users){
-            if(user.email.equals(recipientEmail)){
-                recipient = user
-                if(recipient == null){
-                    Log.d(TAG,"Recipient not found.")
-                }
-            }
             if(user.email == payerEmail){
                 payer = user
                 if(payer == null){
-                    Log.d(TAG,"Payer is not found.")
+                    Log.d(TAG,"Payer not found.")
                 }
             }
         }
 
         payButton.setOnClickListener {
-            if (payer != null && recipient != null) {
-                if(payer.isAbleToPay(transactionAmount.text.toString().toDouble()) == 2){
+            //find recipient and payer in all users
+            for(user in users){
+                if(user.email == recipientEmail.text.toString()){
+                    recipient = user
+                    if(recipient == null){
+                        Log.d(TAG,"Recipient not found.")
+                    }
+                }
+            }
+            if ((payer != null) && (recipient != null)) {
+                if(payer!!.isAbleToPay(transactionAmount.text.toString().toDouble()) == 2){
                     val transaction = Transaction(
                         date = Timestamp.now(),
                         description = description.text.toString(),
@@ -99,13 +102,13 @@ class PaymentFragment : Fragment() {
                         ).show()
                     }
                 }
-                else if(payer.isAbleToPay(transactionAmount.text.toString().toDouble()) == 1){
+                else if(payer!!.isAbleToPay(transactionAmount.text.toString().toDouble()) == 1){
                     Toast.makeText(
                         this@PaymentFragment.context,"Not enough money on account to make this transaction.",
                         Toast.LENGTH_LONG
                     ).show()
                 }
-                else if(payer.isAbleToPay(transactionAmount.text.toString().toDouble()) == 0){
+                else if(payer!!.isAbleToPay(transactionAmount.text.toString().toDouble()) == 0){
                     Toast.makeText(
                         this@PaymentFragment.context,"It is not possible to make a transaction worth 0 EUR",
                         Toast.LENGTH_LONG

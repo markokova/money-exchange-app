@@ -53,33 +53,33 @@ class Register : AppCompatActivity() {
                             }
                         var transactions = ArrayList<Transaction>()
                         val newUser = User(id = "",name = fullName.text.toString(),email = email.text.toString(),balance =100.0,transactions = transactions)
-                        UsersSingleton.users.add(newUser)
+                        //UsersSingleton.users.add(newUser)
                         if(newUser!=null){
                             var fbId : String = ""
                             db.collection("users").add(newUser).addOnSuccessListener {
                                 newUser.id = it.id
                                 fbId = it.id
                                 Log.d(TAG,"new user successfully added to database with id:" + newUser.id)
+                                Toast.makeText(baseContext, "Registration Successful!", Toast.LENGTH_LONG).show()
+                                Log.d(TAG,"registration: Successful")
+                                startActivity(Intent(this, Login::class.java))
                             }
                             //without this id attribute in firebase would be empty
-                            db.collection("users").document(UsersSingleton.users.elementAt(UsersSingleton.users.size - 1).id)
-                                .set(
-                                    hashMapOf(
-                                        "id" to fbId,
-                                        "name" to newUser.name,
-                                        "email" to newUser.email,
-                                        "balance" to newUser.balance
-                                    )
-                                ).addOnSuccessListener {
-                                    Log.d(TAG,"successfully set id to firebase")
-                                }
+//                            db.collection("users").document(UsersSingleton.users.elementAt(UsersSingleton.users.size - 1).id)
+//                                .set(
+//                                    hashMapOf(
+//                                        "id" to fbId,
+//                                        "name" to newUser.name,
+//                                        "email" to newUser.email,
+//                                        "balance" to newUser.balance
+//                                    )
+//                                ).addOnSuccessListener {
+//                                    Log.d(TAG,"successfully set id to firebase")
+//                                }
                         }
                         else{
                             Log.d(TAG,"newUser is null")
                         }
-
-                        Log.d(TAG,"registration: Successful")
-                        startActivity(Intent(this, Login::class.java))
                     }
                     else{
                         if(email.text.toString().isEmpty() || password.text.isEmpty() || fullName.text.isEmpty()){
@@ -111,8 +111,6 @@ class Register : AppCompatActivity() {
                     }
                 }
         }
-
-
     }
 
     class UsersSingleton{

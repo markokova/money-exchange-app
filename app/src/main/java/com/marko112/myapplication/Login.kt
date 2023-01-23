@@ -75,30 +75,33 @@ class Login : AppCompatActivity() {
     }
 
     private fun syncLocalUsersWithDB(){
-        var counter = 0
         db.collection("users")
             .get()
             .addOnSuccessListener {
                 for(data in it.documents){
                     val user = data.toObject(User::class.java)
                     if(user != null){
-                        for(localUser in users){
-                            if(localUser.email == user.email){
-                                Log.d(TAG,"User already added in register, no need to sync it.")
-                            }
-                            else{
-                                counter++
-                                users.add(user)
-                                val sizeOfUsers = users.size
-                                users.elementAt(sizeOfUsers - 1).id = data.id
-                                Log.d(TAG,"user added in sync method.")
-                            }
-                        }
+                        users.add(user)
+                        val sizeOfUsers = users.size
+                        users.elementAt(sizeOfUsers - 1).id = data.id
+                    }
+                    else{
+                        Log.d(TAG,"In sync method in Login Class, firebase user is null so your local users will be empty too.")
                     }
                 }
             }
-        Log.d(ContentValues.TAG,"IN LOGIN, " + counter.toString() + " USERS ARE ADDED TO LOCAL DATABASE")
     }
-
-
 }
+
+//                        for(localUser in users){
+//                            if(localUser.email == user.email){
+//                                Log.d(TAG,"User already added in register, no need to sync it.")
+//                            }
+//                            else{
+//                                counter++
+//                                users.add(user)
+//                                val sizeOfUsers = users.size
+//                                users.elementAt(sizeOfUsers - 1).id = data.id
+//                                Log.d(TAG,"user added in sync method.")
+//                            }
+//                        }
