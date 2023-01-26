@@ -62,8 +62,10 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/fragment_home_accountArea2"
         app:layout_constraintEnd_toEndOf="@+id/fragment_home_accountArea2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/fragment_home_accountArea2"
         app:layout_constraintTop_toTopOf="@+id/fragment_home_accountArea2"
+        app:layout_constraintVertical_bias="0.0"
         tools:visibility="visible" />
 
     <TextView
@@ -125,5 +127,29 @@
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/fragment_payment_accountArea"
         app:layout_constraintTop_toBottomOf="@+id/emailTextView" />
+
+    <TextView
+        android:id="@+id/fragment_home_accountTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Account information:"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_payment_accountArea"
+        app:layout_constraintStart_toStartOf="@+id/fragment_payment_accountArea" />
+
+    <TextView
+        android:id="@+id/fragment_home_transactionsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Transactions:"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_home_accountArea2"
+        app:layout_constraintStart_toStartOf="@+id/fragment_home_accountArea2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.marko112.myapplication.ui.home
 
+import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
@@ -8,16 +9,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.api.Distribution.BucketOptions.Linear
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.marko112.myapplication.Register
-import com.marko112.myapplication.Transaction
-import com.marko112.myapplication.TransactionRecyclerAdapter
-import com.marko112.myapplication.User
+import com.marko112.myapplication.*
 import com.marko112.myapplication.databinding.FragmentHomeBinding
 import java.util.ArrayList
 
@@ -55,6 +54,7 @@ class HomeFragment : Fragment() {
         val moneyAmount: TextView = binding.fragmentHomeMoneyAmmount
         val recyclerView = binding.fragmentHomeTransactions
         val name = binding.fragmentHomeName
+
 
         val currentUser = auth?.currentUser?.email
 
@@ -95,6 +95,25 @@ class HomeFragment : Fragment() {
                 layoutManager = LinearLayoutManager(this@HomeFragment.activity)
                 adapter = recyclerAdapter
             }
+            recyclerAdapter.setOnItemClickListener(listener = object: TransactionRecyclerAdapter.ItemListener{
+                @SuppressLint("ResourceType")
+                override fun onItemClick(index: Int) {
+                    val transactionFragment = TransactionFragment()
+                    val bundle = Bundle()
+                    bundle.putString("payerEmail",recyclerAdapter.items[index].payerEmail.toString())
+                    bundle.putString("amount",recyclerAdapter.items[index].amount.toString())
+                    bundle.putString("recipientEmail",recyclerAdapter.items[index].recipientEmail.toString())
+                    bundle.putString("description",recyclerAdapter.items[index].description.toString())
+                    val dateLength = recyclerAdapter.items[index].date?.toDate().toString().length
+                    val date = recyclerAdapter.items[index].date?.toDate().toString().substring(0, dateLength - 15)
+                    bundle.putString("date",date)
+
+                    transactionFragment.arguments = bundle
+
+                    val fragmentTransaction: FragmentTransaction = requireActivity().supportFragmentManager.beginTransaction()
+                    fragmentTransaction.replace(R.id.nav_host_fragment_content_main,transactionFragment).addToBackStack(null).commit()
+                }
+            })
         }
         return root
     }

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/fragment_transaction_greenArea"
+        android:layout_width="320dp"
+        android:layout_height="380dp"
+        android:background="@drawable/fragment_home_transaction_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/fragment_transaction_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/fragment_transaction_descriptionText"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_transaction_date" />
+
+    <TextView
+        android:id="@+id/fragment_transaction_recipientEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/fragment_transaction_greenArea"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_transaction_recEmailText" />
+
+    <TextView
+        android:id="@+id/fragment_transaction_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/fragment_transaction_amountText"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_transaction_recipientEmail" />
+
+    <TextView
+        android:id="@+id/fragment_transaction_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/fragment_transaction_dateText"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_transaction_amount" />
+
+    <TextView
+        android:id="@+id/fragment_payment_recipientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/fragment_transaction_recNameText"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_transaction_payerEmail" />
+
+    <TextView
+        android:id="@+id/fragment_transaction_payerEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/fragment_transaction_greenArea"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_transaction_payEmailText" />
+
+    <TextView
+        android:id="@+id/fragment_transaction_payerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/fragment_transaction_payNameText"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_transaction_title" />
+
+    <TextView
+        android:id="@+id/fragment_transaction_payNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Payer Name:"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/fragment_transaction_greenArea"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_transaction_title" />
+
+    <TextView
+        android:id="@+id/fragment_transaction_payEmailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Payer E-mail:"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/fragment_transaction_greenArea"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_transaction_payNameText" />
+
+    <TextView
+        android:id="@+id/fragment_transaction_recNameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Recipient Name:"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/fragment_transaction_greenArea"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_transaction_payerEmail" />
+
+    <TextView
+        android:id="@+id/fragment_transaction_recEmailText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Recipient E-mail:"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/fragment_transaction_greenArea"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_transaction_recNameText" />
+
+    <TextView
+        android:id="@+id/fragment_transaction_amountText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Amount:"
+        android:textColor="#FAF7F7"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/fragment_transaction_greenArea"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_transaction_recipientEmail" />
+
+    <TextView
+        android:id="@+id/fragment_transaction_dateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Date:"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/fragment_transaction_greenArea"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_transaction_amountText" />
+
+    <TextView
+        android:id="@+id/fragment_transaction_descriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Description:"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/fragment_transaction_greenArea"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_transaction_dateText" />
+
+    <TextView
+        android:id="@+id/fragment_transaction_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Transaction:"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/fragment_transaction_greenArea"
+        app:layout_constraintTop_toTopOf="@+id/fragment_transaction_greenArea" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,11 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".ui.currency_calculator.CurrencyCalculatorFragment">
 
+    <TextView
+        android:id="@+id/fragment_paayment_accountInformation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Account information:"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_payment_accountArea2"
+        app:layout_constraintStart_toStartOf="@+id/fragment_payment_accountArea2" />
+
+    <TextView
+        android:id="@+id/fragment_payment_paymentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="PAYMENT:"
+        android:textAllCaps="true"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/fragment_payment_accountArea"
+        app:layout_constraintStart_toStartOf="@+id/fragment_payment_accountArea" />
+
     <View
         android:id="@+id/fragment_payment_accountArea"
         android:layout_width="340dp"
         android:layout_height="250dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="70dp"
         android:background="@drawable/fragment_home_background_rounded"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,6 +122,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
+        android:background="@drawable/fragment_home_background_rounded"
         android:text="@string/pay_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

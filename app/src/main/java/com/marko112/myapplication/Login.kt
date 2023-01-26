@@ -92,16 +92,3 @@ class Login : AppCompatActivity() {
             }
     }
 }
-
-//                        for(localUser in users){
-//                            if(localUser.email == user.email){
-//                                Log.d(TAG,"User already added in register, no need to sync it.")
-//                            }
-//                            else{
-//                                counter++
-//                                users.add(user)
-//                                val sizeOfUsers = users.size
-//                                users.elementAt(sizeOfUsers - 1).id = data.id
-//                                Log.d(TAG,"user added in sync method.")
-//                            }
-//                        }
