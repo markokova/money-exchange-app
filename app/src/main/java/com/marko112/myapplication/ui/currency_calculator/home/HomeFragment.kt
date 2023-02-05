@@ -1,4 +1,4 @@
-package com.marko112.myapplication.ui.home
+package com.marko112.myapplication.ui.currency_calculator.home
 
 import android.annotation.SuppressLint
 import android.content.ContentValues.TAG

@@ -23,7 +23,7 @@ import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.marko112.myapplication.databinding.ActivityMainBinding
-import com.marko112.myapplication.ui.home.HomeFragment
+import com.marko112.myapplication.ui.currency_calculator.home.HomeFragment
 import com.marko112.myapplication.ui.paymenet.PaymentFragment
 
 

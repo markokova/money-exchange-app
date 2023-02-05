@@ -16,7 +16,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.marko112.myapplication.*
 import com.marko112.myapplication.databinding.FragmentPaymentBinding
-import com.marko112.myapplication.ui.home.HomeFragment
+import com.marko112.myapplication.ui.currency_calculator.home.HomeFragment
 import java.time.LocalDate
 
 //import com.marko112.myapplication.MainActivity.addItem
